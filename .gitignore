@@ -1,0 +1,27 @@
+*.java.hsp
+*.sonarj
+*.sw*
+.DS_Store
+.settings
+bin
+build.sh
+ivy-cache
+jxl.log
+jmx.log
+derby.log
+.gradle
+argfile*
+
+/build
+
+# Eclipse artifacts, including WTP generated manifests
+.classpath
+.project
+
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+.idea
+out
