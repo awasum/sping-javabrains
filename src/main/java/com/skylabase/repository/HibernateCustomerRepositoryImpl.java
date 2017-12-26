@@ -14,11 +14,12 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 	public List<Customer> findAll(){
 		List<Customer> customers = new ArrayList<>();
 		
+		//just a stub to show the concepts
 		Customer customer = new Customer();
 		customer.setFirstName("Tyrion");
 		customer.setLastName("Lannister");
 		
-		customers.add(customer);
+		customers.add(customer); 
 		
 		return customers;
 	}
