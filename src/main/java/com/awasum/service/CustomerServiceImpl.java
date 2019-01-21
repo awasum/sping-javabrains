@@ -1,10 +1,10 @@
-package com.skylabase.service;
+package com.awasum.service;
 
 import java.util.List;
 
-import com.skylabase.model.Customer;
-import com.skylabase.repository.CustomerRepository;
-import com.skylabase.repository.HibernateCustomerRepositoryImpl;
+import com.awasum.model.Customer;
+import com.awasum.repository.CustomerRepository;
+import com.awasum.repository.HibernateCustomerRepositoryImpl;
 
 public class CustomerServiceImpl implements CustomerService {
 	
@@ -13,7 +13,7 @@ public class CustomerServiceImpl implements CustomerService {
 	private CustomerRepository customerRepository = new HibernateCustomerRepositoryImpl();
 	
 	/* (non-Javadoc)
-	 * @see com.skylabase.service.CustomerService#findAll()
+	 * @see com.awasum.service.CustomerService#findAll()
 	 */
 	@Override
 	public List<Customer> findAll(){

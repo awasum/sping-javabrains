@@ -1,8 +1,8 @@
-package com.skylabase.repository;
+package com.awasum.repository;
 
 import java.util.List;
 
-import com.skylabase.model.Customer;
+import com.awasum.model.Customer;
 
 public interface CustomerRepository {
 

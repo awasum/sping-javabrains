@@ -1,7 +1,7 @@
-package com.skylabase;
+package com.awasum;
 
-import com.skylabase.service.CustomerService;
-import com.skylabase.service.CustomerServiceImpl;
+import com.awasum.service.CustomerService;
+import com.awasum.service.CustomerServiceImpl;
 
 public class Application {
 

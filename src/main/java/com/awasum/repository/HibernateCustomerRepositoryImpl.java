@@ -1,14 +1,14 @@
-package com.skylabase.repository;
+package com.awasum.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.skylabase.model.Customer;
+import com.awasum.model.Customer;
 
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
 	/* (non-Javadoc)
-	 * @see com.skylabase.repository.CustomerRepository#findAll()
+	 * @see com.awasum.repository.CustomerRepository#findAll()
 	 */
 	@Override
 	public List<Customer> findAll(){

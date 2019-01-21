@@ -1,4 +1,4 @@
-package com.skylabase.model;
+package com.awasum.model;
 
 public class Customer {
 

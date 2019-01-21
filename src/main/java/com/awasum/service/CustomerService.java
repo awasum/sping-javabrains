@@ -1,8 +1,8 @@
-package com.skylabase.service;
+package com.awasum.service;
 
 import java.util.List;
 
-import com.skylabase.model.Customer;
+import com.awasum.model.Customer;
 
 public interface CustomerService {
 
