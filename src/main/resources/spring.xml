@@ -4,8 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="triangle" class="com.awasum.Triangle" >
-        <constructor-arg value="Equilateral"/>
-        <constructor-arg value="25"/>
+        <constructor-arg type="int" value="25"/>
     </bean>
 
 </beans>
