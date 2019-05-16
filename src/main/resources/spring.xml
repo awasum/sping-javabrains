@@ -3,27 +3,20 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class="com.awasum.Triangle" >
-        <property name="pointA" ref="zeroPoint"/>
-        <property name="pointB" >
-            <bean class="com.awasum.Point">
-                <property name="x" value="20"/>
-                <property name="y" value="0"/>
-            </bean>
-        </property>
-        <property name="pointC">
-            <bean id="point3" class="com.awasum.Point">
-                <property name="x" value="-20"/>
-                <property name="y" value="0"/>
-            </bean>
-
-        </property>
+    <bean id="triangle" class="com.awasum.Triangle" autowire="byName">
     </bean>
 
-    <bean id="zeroPoint" class="com.awasum.Point">
+    <bean id="pointA" class="com.awasum.Point">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
-    <alias name="triangle" alias="triangle-alias"/>
+    <bean id="pointB" class="com.awasum.Point">
+        <property name="x" value="20"/>
+        <property name="y" value="0"/>
+    </bean>
+    <bean id="pointC" class="com.awasum.Point">
+        <property name="x" value="-20"/>
+        <property name="y" value="0"/>
+    </bean>
 
 </beans>
