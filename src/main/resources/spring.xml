@@ -22,6 +22,6 @@
         <property name="y" value="0"/>
     </bean>
 
-    <bean class="com.awasum.DisplayNameBeanPostProcessor"/>
+    <bean class="com.awasum.MyBeanFactoryPostProcessor"/>
 
 </beans>
