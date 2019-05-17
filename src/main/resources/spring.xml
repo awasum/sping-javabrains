@@ -3,7 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class="com.awasum.Triangle" autowire="byName">
+    <bean id="parenttriangle" class="com.awasum.Triangle">
+        <property name="pointA" ref="pointA"/>
+    </bean>
+
+    <bean id="triangle1" class="com.awasum.Triangle" autowire="byName" parent="parenttriangle">
+        <property name="pointB" ref="pointB"/>
+        <property name="pointC" ref="pointC"/>
     </bean>
 
     <bean id="pointA" class="com.awasum.Point">
