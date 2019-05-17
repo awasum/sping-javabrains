@@ -7,7 +7,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean {
+public class Triangle implements ApplicationContextAware, BeanNameAware {
 
   private Point pointA;
   private Point pointB;
@@ -60,13 +60,11 @@ public class Triangle implements ApplicationContextAware, BeanNameAware, Initial
     this.applicationContext = applicationContext;
   }
 
-  @Override
-  public void destroy() throws Exception {
-    System.out.println("Triangle bean destroyed");
+  public void myInit() {
+    System.out.println("My triangle init");
   }
 
-  @Override
-  public void afterPropertiesSet() throws Exception {
-    System.out.println("Triangle Bean initialized");
+  public void cleanUp() {
+    System.out.println("Destroy Triangle bean");
   }
 }
