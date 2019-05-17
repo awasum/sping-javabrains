@@ -1,8 +1,8 @@
 package com.awasum;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 public class Circle implements Shape {
 
@@ -12,8 +12,7 @@ public class Circle implements Shape {
     return center;
   }
 
-  @Autowired
-  @Qualifier(value = "circle")
+  @Resource(name = "pointA")
   public void setCenter(Point center) {
     this.center = center;
   }
@@ -23,5 +22,15 @@ public class Circle implements Shape {
     System.out.println("Circle Drawn");
     System.out.println("Circle Center Pont(" + center.getX() + "," + center.getY() + ")");
 
+  }
+
+  @PostConstruct
+  public void initCircle() {
+    System.out.println("Circle init");
+  }
+
+  @PreDestroy
+  public void destroyCircle() {
+    System.out.println("Circle destroy");
   }
 }

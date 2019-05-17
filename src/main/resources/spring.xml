@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="triangle" class="com.awasum.Triangle" >
         <property name="pointA" ref="pointA"/>
@@ -11,7 +12,6 @@
 
     <bean id="circle" class="com.awasum.Circle" >
         <property name="center" ref="pointA"/>
-        <qualifier value="circle"/>
     </bean>
 
     <bean id="pointA" class="com.awasum.Point">
@@ -27,6 +27,6 @@
         <property name="y" value="0"/>
     </bean>
 
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <context:annotation-config/>
 
 </beans>
