@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-default-init-method="myInit" default-destroy-method="cleanUp">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="parenttriangle" class="com.awasum.Triangle">
-        <property name="pointA" ref="pointA"/>
+    <bean id="triangle" class="com.awasum.Triangle" >
+        <property name="pointA" ref="zeroPoint"/>
+        <property name="pointB" ref="point2"/>
+        <property name="pointC" ref="point3"/>
     </bean>
 
-    <bean id="triangle1" class="com.awasum.Triangle" autowire="byName" parent="parenttriangle" init-method="myInit" destroy-method="cleanUp">
-        <property name="pointB" ref="pointB"/>
-        <property name="pointC" ref="pointC"/>
-    </bean>
-
-    <bean id="pointA" class="com.awasum.Point">
+    <bean id="zeroPoint" class="com.awasum.Point">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
-    <bean id="pointB" class="com.awasum.Point">
+    <bean id="point2" class="com.awasum.Point">
         <property name="x" value="20"/>
         <property name="y" value="0"/>
     </bean>
-    <bean id="pointC" class="com.awasum.Point">
+    <bean id="point3" class="com.awasum.Point">
         <property name="x" value="-20"/>
         <property name="y" value="0"/>
     </bean>
+
+    <bean class="com.awasum.DisplayNameBeanPostProcessor"/>
 
 </beans>
