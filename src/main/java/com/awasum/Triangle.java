@@ -1,18 +1,10 @@
 package com.awasum;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-
-public class Triangle implements ApplicationContextAware, BeanNameAware {
+public class Triangle implements Shape {
 
   private Point pointA;
   private Point pointB;
   private Point pointC;
-  private ApplicationContext applicationContext;
 
   public Triangle() {
 
@@ -42,6 +34,7 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
     this.pointC = pointC;
   }
 
+  @Override
   public void draw() {
     System.out.println("Triange Drawn with Point: " );
     System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
@@ -50,21 +43,5 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
 
   }
 
-  @Override
-  public void setBeanName(String beanName) {
-    System.out.println("Bean Name is: " + beanName);
-  }
 
-  @Override
-  public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-    this.applicationContext = applicationContext;
-  }
-
-  public void myInit() {
-    System.out.println("My triangle init");
-  }
-
-  public void cleanUp() {
-    System.out.println("Destroy Triangle bean");
-  }
 }
