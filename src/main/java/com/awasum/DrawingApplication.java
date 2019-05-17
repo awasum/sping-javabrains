@@ -1,6 +1,6 @@
 package com.awasum;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawingApplication {
@@ -14,7 +14,8 @@ public class DrawingApplication {
 //		Triangle beanTriangle = (Triangle) beanFactory.getBean("triangle");
 //		beanTriangle.draw();
 
-		final ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+		final AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+		applicationContext.registerShutdownHook();
 		Triangle beanTriangle = (Triangle) applicationContext.getBean("triangle1");
 		beanTriangle.draw();
 	}

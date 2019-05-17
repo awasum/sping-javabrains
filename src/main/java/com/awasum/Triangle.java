@@ -2,10 +2,12 @@ package com.awasum;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware {
+public class Triangle implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean {
 
   private Point pointA;
   private Point pointB;
@@ -56,5 +58,15 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
   @Override
   public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
     this.applicationContext = applicationContext;
+  }
+
+  @Override
+  public void destroy() throws Exception {
+    System.out.println("Triangle bean destroyed");
+  }
+
+  @Override
+  public void afterPropertiesSet() throws Exception {
+    System.out.println("Triangle Bean initialized");
   }
 }
