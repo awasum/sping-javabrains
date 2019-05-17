@@ -10,7 +10,8 @@
     </bean>
 
     <bean id="circle" class="com.awasum.Circle" >
-
+        <property name="center" ref="pointA"/>
+        <qualifier value="circle"/>
     </bean>
 
     <bean id="pointA" class="com.awasum.Point">
@@ -26,6 +27,6 @@
         <property name="y" value="0"/>
     </bean>
 
-    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
 </beans>
